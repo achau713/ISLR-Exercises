@@ -84,3 +84,89 @@ _Solution:_
 (a)
 
 (b)
+
+\newpage
+
+## Question 4
+
+4. You will now think of some real-life applications for statistical learning.
+
+(a) Describe three real-life applications in which classification might be
+useful. Describe the response, as well as the predictors. Is the goal of each
+application inference or prediction? Explain your answer.
+
+(b) Describe three real-life applications in which regression might be useful.
+Describe the response, as well as the predictors. Is the goal of each
+application inference or prediction? Explain your answer. 
+
+(c) Describe three real-life applications in which cluster analysis might be
+useful.
+
+_Solution:_
+
+(a) One application could be to determine if an applicant will default on a loan. The response is Yes/No, indicating whether the applicant defaulted on a loan.
+Potential explanatory variables could include credit score, age, income, 
+employment status, number of dependents, etc. The goal of this application is prediction - it is important to predict if an applicant will default on a loan!  
+&nbsp;    
+Another application could be to determine if a person would move up in socioeconomic status. The response is Yes/No, indicating whether the applicant
+moved up (Yes) or down (No) from their SES status when they were born. Potential
+explantatory variables could be parent's education level, parent's employment,
+household income, born in city or rural area, number of siblings, etc. The main goal of this application is inference. We would like to understand the relationship between the response and the explanatory variables.  
+&nbsp;  
+Yet another application is to determine if a basketball team will win the championship game. The response is Yes/No, indicating if the team will win the championship game. Potential explanatory variables could include: season record, average number of points scored during season, whether team won a championship in previous year(s), etc. This application could be both for inference and prediction. It is an interesting question to pose: what leads to basketball teams winning championship games? On the other hand, you may be betting with your buddies on the championship game, so your money is on the line!
+
+
+(b)
+One application of regression is to predict the yearly sales for a clothing company (response variable). Potential explanatory variables could include:
+past year sales, advertising expenditure, number of physical stores, number of
+unique visitors to website, etc.  
+&nbsp;  
+Another application of regression is to model the relationship between age of death (response) with the following explanatory variables: average minutes spent exercising per week, time spent engaging in mental activities, average number of servings of fruits and vegetables, smoker status, weight, etc. This application focuses on inferences - understanding the relationship between response and predictors.  
+&nbsp;  
+Another application of regression could be to model the number of delayed flights at an airport in a day(response). Potential predictors could include: average daily passengers total, location of airport, domestic/international airport status, average number of thunderstorms/severe weather incidents occured per year, number of average daily nonstop passengers, number of TSA checkpoints, etc. The main interest of this application is inference: what are the key factors which contribute to long airport delays.
+
+(c)
+
+
+\newpage
+
+## Question 5
+
+5. What are the advantages and disadvantages of a very flexible (versus a less
+flexible) approach for regression or classification? Under what circumstances
+might a more flexible approach be preferred to a less flexible approach? When
+might a less flexible approach be preferred?
+
+\newpage
+
+## Question 6
+
+6. Describe the differences between a parametric and a non-parametric
+statistical learning approach. What are the advantages of a parametric approach
+to regression or classification (as opposed to a nonparametric approach)? What
+are its disadvantages?
+
+\newpage
+
+## Question 7
+
+7. The table below provides a training data set containing six observations, three predictors, and one qualitative response variable.
+
+Suppose we wish to use this data set to make a prediction for Y when
+X1 = X2 = X3 = 0 using K-nearest neighbors.
+(a) Compute the Euclidean distance between each observation and the test point,
+X1 = X2 = X3 = 0.
+(b) What is our prediction with K = 1? Why?
+(c) What is our prediction with K = 3? Why?
+(d) If the Bayes decision boundary in this problem is highly nonlinear, then
+would we expect the best value for K to be large or small? Why?
+
+# Applied Exercises
+
+\newpage
+
+## Question 8
+
+\newpage
+
+## Question 9
