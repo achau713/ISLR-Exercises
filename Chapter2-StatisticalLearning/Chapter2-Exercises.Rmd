@@ -166,9 +166,14 @@ statistical learning approach. What are the advantages of a parametric approach
 to regression or classification (as opposed to a nonparametric approach)? What
 are its disadvantages?
 
-_Solution:_
-
-
+_Solution:_  
+Parametric statistical methods make assumptions about the functional form of f and reduce the problem of estimating f to solving for a set of parameters For example, linear regression is a parametric method which assumes that f is linear in its predictors X. To implement linear regression, one can use least squares to solve for $\beta$.  
+&nbsp;  
+Nonparametric statistical methods do not make assumptions about the functional form of f. Instead, they attempt to estimate f through mathematical techniques.  
+&nbsp;  
+An advantage of a parametric method is that it is easy to estimate a set of parameters compared to estimating an entire function for nonparametric methods.  
+&nbsp;  
+A disadvantage of a parametric method is that the true form of f may be completely different than what the stated assumptions of the parametic method. This is where nonparametric methods shine as they can estimate a greater variety of functional forms of f. However, because of the high flexibility of nonparametric methods, these methods can result in high variance and overfitting. Nonparametrics methods require a very large number of observations to produce accurate estimate because they cannot reduce problem to estimating a small set of coefficients.
 
 \newpage
 
