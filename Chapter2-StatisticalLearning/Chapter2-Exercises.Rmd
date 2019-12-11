@@ -126,7 +126,14 @@ Another application of regression is to model the relationship between age of de
 Another application of regression could be to model the number of delayed flights at an airport in a day(response). Potential predictors could include: average daily passengers total, location of airport, domestic/international airport status, average number of thunderstorms/severe weather incidents occured per year, number of average daily nonstop passengers, number of TSA checkpoints, etc. The main interest of this application is inference: what are the key factors which contribute to long airport delays.
 
 (c)
-
+One application of cluster analysis is market segmentation of customers when
+a company wants to introduce a product to a new market. Cluster analysis can
+help the company gain insight into which customers would be most likely to be interested in the product or buy more of the product.  
+&nbsp; 
+Another application of cluster analysis is to identify regions with similar
+weathers by using info such as latitude/longitude, humidity, temperature, sea level, altitude, etc.  
+&nbsp; 
+Lastly, another application of cluster analysis could be to group together students within a school based on criterion such as age, ethnicity, family income, GPA, etc.  
 
 \newpage
 
@@ -135,7 +142,20 @@ Another application of regression could be to model the number of delayed flight
 5. What are the advantages and disadvantages of a very flexible (versus a less
 flexible) approach for regression or classification? Under what circumstances
 might a more flexible approach be preferred to a less flexible approach? When
-might a less flexible approach be preferred?
+might a less flexible approach be preferred?  
+
+_Solution:_
+
+The advantage of a very flexible model is that the model will have low bias because it can model the data precisely. Another advantage of flexible models is that they can model more complex relationship between variables. Undoubtedly, any real-world relationships are not constant or linear.  
+&nbsp;  
+A disadvantage of a very flexible model is the large number of parameters that need to be estimated. This makes the model less interpretable. This problem is
+exaceberated if we have a low number of observations but a high number of
+predictor variables. Another disadvantage of a flexible model is that it will 
+most likely have high variance. The model will have a low train MSE, but will have a high test MSE since the model will struggle to accurately predict given brand new observations. The model was taught to adhere too closely to the training data which causes it to struggle with new test data.  
+&nbsp;  
+A more flexible approach is preferred if the main goal is accurate prediction. Perhaps, accurate prediction would help a company's bottom line or provide a critical diagonosis on a patient.  
+&nbsp;  
+On the other hand, a less flexible approach is preferred if the main goal is inference. That is, we value interprebility and seek to understand the relationship between variables.  
 
 \newpage
 
@@ -145,6 +165,10 @@ might a less flexible approach be preferred?
 statistical learning approach. What are the advantages of a parametric approach
 to regression or classification (as opposed to a nonparametric approach)? What
 are its disadvantages?
+
+_Solution:_
+
+
 
 \newpage
 
