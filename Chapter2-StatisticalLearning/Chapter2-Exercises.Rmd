@@ -190,12 +190,44 @@ X1 = X2 = X3 = 0.
 (d) If the Bayes decision boundary in this problem is highly nonlinear, then
 would we expect the best value for K to be large or small? Why?
 
+_Solution:_
+
+The dataset is recreated below.
+```{r}
+df <- data.frame(X1 = c(0, 2, 0, 0, -1, 1), X2 = c(3, 0, 1, 1, 0, 1),
+                 X3 = c(0, 0, 3, 2, 1, 1),
+                 Y = c("Red", "Red", "Red", "Green", "Green", "Red"))
+
+# Test Point
+TestPoint <- c(0, 0, 0)
+
+df <- rbind(df, TestPoint)
+
+# calculate euclidean distance
+# last row is eucliden distance of test point to all observations
+# in training set
+dist(df[1:7, 1:3], method = "euclidean")
+
+```
+
+(b) When K = 1, our predicition is Green. Because the closest observation to the test point is observation 5 and it is Green.
+
+(c) When K = 3, our prediction is Green. The three closest observations
+to the test point are observations 4, 5, and 6. Observations 4 and 5 are Green and observation 6 is Red. So the estimated probability for the Green Class is 2/3 and K-Nearest Neighbors predicts that the test point belongs to the Green class.
+
 # Applied Exercises
 
 \newpage
 
 ## Question 8
 
+_Solution:_
 \newpage
 
 ## Question 9
+
+_Solution:_
+
+## Question 10
+
+_Solution:_
