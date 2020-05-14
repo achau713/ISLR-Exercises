@@ -222,12 +222,152 @@ to the test point are observations 4, 5, and 6. Observations 4 and 5 are Green a
 ## Question 8
 
 _Solution:_
+
+(a) Load data
+```{r}
+library(here)
+college <- read.csv(here("Chapter2-StatisticalLearning", "College.csv"))
+```
+
+(b) View data
+
+```{r, eval = FALSE}
+# opens a data editor
+rownames(college) <- college[ , 1]
+fix(college)
+college <- college[ ,-1]
+fix(college)
+```
+
+(c)
+
+i. Summary of all the variabes 
+```{r}
+summary(college)
+```
+
+
+ii. Scatterplot matrix
+```{r}
+pairs(college[, 1:10])
+```
+
+
+iii. Boxplot of `Outstate` vs `Private`
+```{r}
+plot(college$Private, college$Outstate,
+     xlab = "Private School",
+     ylab = "Out-of-state tuition")
+```
+
+
+iv.
+
+After creating the new `Elite` column, we find that
+there are 78 elite universites. 
+```{r}
+# create vector of "No" with length of the dataset
+Elite <- rep ("No",nrow(college ))
+
+# University is elite if the top 10% of the high
+# school class exceeds 50%
+Elite[college$Top10perc > 50] <- " Yes"
+
+# coerce to factor
+Elite = as.factor(Elite)
+
+# bind to data frame
+college <- data.frame(college, Elite)
+
+summary(college$Elite)
+
+```
+
+By plotting elite status against out-of state tuition,
+we find that elite universities tend to have higher
+out-of-state tuition costs. 
+```{r}
+plot(college$Elite, college$Outstate,
+     xlab = "Elite University",
+     ylab = "Out-of-state tuition")
+```
+
+
+(v) Some histograms of the quantitative variables
+
+```{r}
+par(mfrow=c(2,2))
+hist(college$Outstate, xlab = "Out-of-state tuition", main = "")
+hist(college$S.F.Ratio, xlab = "Student-Faculty Ratio", main = "")
+hist(college$Grad.Rate, xlab = "Graduation Rate", main = "")
+hist(college$Expend, xlab = "Insructional expenditure per student", main = "", breaks = 20)
+
+```
+
+
 \newpage
 
 ## Question 9
 
 _Solution:_
+(a) The quantitative varibles are: `mpg`, `cylinders`,
+`displacement`, `horsepower`, `weight`, `acceleration`, `year`, and `origin` The sole qualitiative variables is `name`
+```{r}
+auto <- ISLR::Auto
+# determine quantiative variables
+sapply(auto, is.numeric)
+```
+
+(b) Range of numerical variables
+```{r}
+# auto data with only numeric columns
+auto_numeric <- auto[, purrr::map_lgl(auto, is.numeric)]
+t(sapply(auto_numeric, range))
+```
+
+(c) Mean and standard deviation of numerical variables
+```{r}
+sapply(auto_numeric, mean)
+sapply(auto_numeric, sd)
+```
+
+(d) Remove some observations. Recompute mean and sd.
+```{r}
+auto_numeric_sparse <- auto_numeric[-c(10:85),]
+t(sapply(auto_numeric_sparse, range))
+sapply(auto_numeric_sparse, mean)
+sapply(auto_numeric_sparse, sd)
+```
+
+
+(e) Exploratory analysis
+```{r}
+par(mfrow=c(2,3))
+plot(auto$acceleration, auto$mpg, 
+     xlab = "acceleration", 
+     ylab = "mpg")
+plot(auto$year, auto$mpg,
+     xlab = "Year", 
+     ylab = "mpg")
+plot(auto$horsepower, auto$mpg,
+     xlab = "horsepower", 
+     ylab = "mpg")
+plot(auto$cylinders, auto$mpg,
+     xlab = "cylinders", 
+     ylab = "mpg")
+plot(auto$weight, auto$mpg,
+     xlab = "weight", 
+     ylab = "mpg")
+plot(auto$displacement, auto$mpg,
+     xlab = "displacement", 
+     ylab = "mpg")
+
+```
+
+
+\newpage
 
 ## Question 10
 
 _Solution:_
+\newpage
