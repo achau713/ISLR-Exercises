@@ -364,10 +364,45 @@ plot(auto$displacement, auto$mpg,
 
 ```
 
+(f) Predicting mpg
+
+The above scatterplots suggest that `weight`, `horsepower`, and `weight` might be useful to predict `mpg.` It appears that there is an inverse relationship between the variables and `mpg.` For example, a heavier car will have lower mpg. There also appears to be a positive relationship between the year of the car and mpg. The newer the make of the car, the better mpg it has. For the `cylinders` and `acceleration` variables, the relationship to `mpg` is more ambiguous. It apperas that higher acceleration means the car also has high mpg, but up to an extent. The acceleration vs mpg plots suggests a diminishing returns in acceleration to mpg. Lastly, for any number of cylinders, the range for mpg varies across cars. 
+
 
 \newpage
 
 ## Question 10
 
 _Solution:_
+
+(a) Load data.
+
+The `Boston` dataset has data on housing values in the suburbs of Boston. There
+are `nrow(Boston)` rows and `ncol(Boston)` columns. Each row represents one suburban towns in Boston. The columns represent different attributes about the town. For example, there is data on the crime rate,  median values of owner-occupied homes, and an index of accessibility to radial highways.
+
+```{r}
+library(MASS)
+head(Boston)
+```
+
+(b) Scatterplots
+
+
+Some observations from the scatterplots. It appears that towns with a higher per capita crime rate (`crim`) are farther from Boston employment centers (`dis`). Also, there is a positive relationship between the average number of rooms per dwelling (`rm`) and the median value of owner-occupied homes (`medv`). THere also appears to be greater range for the percentage of lower status in the population (`lstat`) given a higher proportion of units built prior to 1940 (`age`)
+```{r}
+pairs(Boston[, c("crim", "rm", "dis", "black", "medv")])
+
+pairs(Boston[, c("crim", "nox", "rad", "indus", "ptratio")])
+
+pairs(Boston[, c("crim", "zn", "chas", "age", "tax", "lstat")])
+```
+
+(c) Which variables have a relationship to per capita crime rate.
+
+The scatterplot suggest a positive relationship between weighted mean distance from major employment centers and per capita crime rates. Also, there is a mild positive relationship between percentage of lower status of the population and proportion of owner-occupied units built prior to 1940 with per capita crime rate.
+
+(d) 
+
+The per capita crime rate varies from `range(Boston$crim)[1]` to `range(Boston$crim)[2].`The tax rate varies from `range(Boston$tax)[1]` to `range(Boston$tax)[2].` And, The tax rate varies from `range(Boston$ptratio)[1]` to `range(Boston$ptratio)[2].`There is a wide range for the per capita crime rate and the tax rate. The range for the pupil-teacher ratios is not as pronounced. 
+
 \newpage
