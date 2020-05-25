@@ -7,26 +7,27 @@ output:
     toc: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-## R Markdown
+\newpage
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# Conceptual Exercises
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## Question 1
 
-```{r cars}
-summary(cars)
-```
+Describe the null hypotheses to which the p-values given in Table 3.4 correspond. Explain what conclusions you can draw based on these p-values. Your explanation should be phrased in terms of sales, TV, radio, and newspaper, rather than in terms of the coefficients of the linear model.
 
-## Including Plots
+_Solution:_
 
-You can also embed plots, for example:
+The null hypotheses to which these p-values correspond to is if the true regression coefficients are zero. Note that there is nothing said about a specified significance levels. We will not state that some coefficients are "signigicant" vs "non-significant". However, the regression results suggest that for for every $1000 increase in television, radio, and newpaper advertising, there will be an average change in sales by 46, 189, and -1 units, respectively.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+\newpage
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Question 2
+
+Carefully explain the differences between the KNN classifier and KNN regression methods.
+
+_Solution:_  
+  
+KNN regression is a regression method used to estimate a functional form for a given dataset. It does this by identifying K training observations that are closest to $x_{0}$ (represnted by $N_{0}$ and then estimates $f\widehat(x_{0})$ by the following formula: $f\widehat(x_{0})  = \frac{1}{K} * \sum_{x_{i} \in N_{0}} y_{i}$.  
+  
+KNN classification is a classification algorithm used to clasify observations into different classes within the dataset. The algorithm assigns the observation to the class corresponding to the most common class of its neighborhing points. 
