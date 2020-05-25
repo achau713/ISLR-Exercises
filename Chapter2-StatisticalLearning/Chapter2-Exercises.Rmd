@@ -377,32 +377,78 @@ _Solution:_
 
 (a) Load data.
 
-The `Boston` dataset has data on housing values in the suburbs of Boston. There
-are `nrow(Boston)` rows and `ncol(Boston)` columns. Each row represents one suburban towns in Boston. The columns represent different attributes about the town. For example, there is data on the crime rate,  median values of owner-occupied homes, and an index of accessibility to radial highways.
 
 ```{r}
 library(MASS)
-head(Boston)
+boston <- Boston
+head(boston)
 ```
+
+The `boston` dataset has data on housing values in the suburbs of boston. There
+are `r nrow(boston)` rows and `r ncol(boston)` columns. Each row represents one suburban towns in boston. The columns represent different attributes about the town. For example, there is data on the crime rate,  median values of owner-occupied homes, and an index of accessibility to radial highways.
 
 (b) Scatterplots
 
 
-Some observations from the scatterplots. It appears that towns with a higher per capita crime rate (`crim`) are farther from Boston employment centers (`dis`). Also, there is a positive relationship between the average number of rooms per dwelling (`rm`) and the median value of owner-occupied homes (`medv`). THere also appears to be greater range for the percentage of lower status in the population (`lstat`) given a higher proportion of units built prior to 1940 (`age`)
+Some observations from the scatterplots. It appears that towns with a higher per capita crime rate (`crim`) are farther from boston employment centers (`dis`). Also, there is a positive relationship between the average number of rooms per dwelling (`rm`) and the median value of owner-occupied homes (`medv`). THere also appears to be greater range for the percentage of lower status in the population (`lstat`) given a higher proportion of units built prior to 1940 (`age`)
 ```{r}
-pairs(Boston[, c("crim", "rm", "dis", "black", "medv")])
+pairs(boston[, c("crim", "rm", "dis", "black", "medv")])
 
-pairs(Boston[, c("crim", "nox", "rad", "indus", "ptratio")])
+pairs(boston[, c("crim", "nox", "rad", "indus", "ptratio")])
 
-pairs(Boston[, c("crim", "zn", "chas", "age", "tax", "lstat")])
+pairs(boston[, c("crim", "zn", "chas", "age", "tax", "lstat")])
 ```
 
 (c) Which variables have a relationship to per capita crime rate.
 
 The scatterplot suggest a positive relationship between weighted mean distance from major employment centers and per capita crime rates. Also, there is a mild positive relationship between percentage of lower status of the population and proportion of owner-occupied units built prior to 1940 with per capita crime rate.
 
-(d) 
+(d) Ranges of quantitative variables
 
-The per capita crime rate varies from `range(Boston$crim)[1]` to `range(Boston$crim)[2].`The tax rate varies from `range(Boston$tax)[1]` to `range(Boston$tax)[2].` And, The tax rate varies from `range(Boston$ptratio)[1]` to `range(Boston$ptratio)[2].`There is a wide range for the per capita crime rate and the tax rate. The range for the pupil-teacher ratios is not as pronounced. 
+The per capita crime rate varies from `r range(boston$crim)[1]` to `r range(boston$crim)[2]`. The tax rate varies from `r range(boston$tax)[1]` to `r range(boston$tax)[2]` And, The tax rate varies from `r range(boston$ptratio)[1]` to `r range(boston$ptratio)[2]`. There is a wide range for the per capita crime rate and the tax rate. The range for the pupil-teacher ratios is not as wide.
+
+
+(e) How many of the suburbs bound the Charles River?
+
+`r sum(boston$chas == 1)` Boston suburbs bound the Charles River
+
+(f) Median pupil teacher ratio among towns
+
+The median pupil teach ratio among towns is `r median(boston$ptratio)`
+
+(g) 
+
+The lowest median value of owner occupied home is `r min(boston$medv)`. This value corresponds to suburb 399 and 406.
+
+
+The values for the other predictor for suburb 399 is shown below
+```{r}
+t(boston[399, ])
+```
+
+
+The values for the other predictors for suburb 406 is shown below
+```{r}
+t(boston[406, ])
+```
+
+Below is the overall range for the predictors.
+```{r}
+t(sapply(boston, range))
+```
+
+The predictor values for suburb 406 had crime rates closer to the upper bound for `crim`. Both suburbs had the maximum value for `age`, the proportion of owner-occupied units built prior to 1940. Both suburbs were close to Boston employment centers (`dis`), compared to the range of `dis`. Also, the value for `black` and `tax` was much closer to the upper bound for the range of `black` and `tax`. Also, these suburbs had a high pupil-teacher ratio compared to the range of `ptratio`. And, the percentage of the lower status of the population skewed toward the upper bound of the range for `lstat`.
+
+(h) 
+
+There are `r sum(boston$rm > 7)` suburbs that average more than 7 rooms per dwelling. And `r sum(boston$rm > 8)` suburbs that average more than 8 rooms per dwelling.
+
+
+Below are the suburbs that average more than 8 rooms per dwelling.
+```{r}
+boston[boston$rm > 8, ]
+```
+
+It appears that most of these suburbs are not bound by the Charles river, have a high proportion of blacks, have a high proprtion of owner-occupied units built prior to 1940, have a lower percentage of lower status of the population, have a high medican value of owner-occupied homes, have a low crime rate, and are closer to Boston employment centres.
 
 \newpage
