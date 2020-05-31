@@ -1,7 +1,7 @@
 ---
 title: "ISLR Chapter 3 Exercises"
 author: "Anthony Chau"
-date: 'Last compiled: `r format(Sys.Date(), "%B %d %Y")`'
+date: 'Last compiled: May 30 2020'
 output: 
   html_document:
     toc: true
