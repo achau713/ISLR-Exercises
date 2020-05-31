@@ -3,9 +3,10 @@ title: "ISLR Chapter 3 Exercises"
 author: "Anthony Chau"
 date: 'Last compiled: May 30 2020'
 output: 
-  html_document:
+  pdf_document:
     toc: true
     keep_md: true
+    latex_engine: "xelatex"
 ---
 
 
@@ -28,7 +29,7 @@ The null hypotheses to which these p-values correspond to is if the true regress
 Carefully explain the differences between the KNN classifier and KNN regression methods.
 
 _Solution:_  
-  
+
 KNN regression is a regression method used to estimate a functional form for a given dataset. It does this by identifying K training observations that are closest to $x_{0}$ (represented by $N_{0}$) and then estimates $f (x_{0})$ by the following formula: $f(x_{0})  = \frac{1}{K} * \sum_{x_{i} \in N_{0}} y_{i}$. That is, KNN regressions averages the response values from all the points in $N_{0}$.
 
 KNN classification is a classification algorithm used to classify observations into different classes within the dataset. The algorithm assigns the observation to the class corresponding to the most common class of its neighboring points.
@@ -40,17 +41,27 @@ KNN classification is a classification algorithm used to classify observations i
 
 Suppose we have a data set with five predictors, X1 = GPA, X2 = IQ, X3 = Gender (1 for Female and 0 for Male), X4 = Interaction between GPA and IQ, and X5 = Interaction between GPA and Gender. The response is starting salary after graduation (in thousands of dollars). Suppose we use least squares to fit the model, and get 
 
-$$\begin{align}
+<!-- $$ -->
+<!-- \begin{align} -->
+<!-- \beta_{0} &=  50 \\ -->
+<!-- \beta_{1} &=  20 \\ -->
+<!-- \beta_{2} &=  0.07 \\ -->
+<!-- \beta_{3} &=  35 \\ -->
+<!-- \beta_{4} &=  0.01 \\ -->
+<!-- \beta_{5} &=  −10 -->
+<!-- \end{align}$$ -->
+
+
+\[
+\begin{aligned}
 \beta_{0} &=  50 \\
 \beta_{1} &=  20 \\
 \beta_{2} &=  0.07 \\
 \beta_{3} &=  35 \\
 \beta_{4} &=  0.01 \\
 \beta_{5} &=  −10
-\end{align}$$
-
-
-
+\end{aligned}
+\]
 
 
 
@@ -62,7 +73,7 @@ We write out the equation:
 Salary = 50 + 20 \cdot GPA + 0.07 \cdot IQ + 35 \cdot Gender + 0.01 \cdot (GPA \cdot IQ)  -10 \cdot (GPA \cdot Gender)
 \]
 
-a)
+### a)
 
 To answer this question, we assume that IQ and GPA is fixed. Then, we write the equation for males and for females
 
@@ -75,10 +86,10 @@ Salary = 50 + 20 \cdot GPA + 0.07 \cdot IQ + 0.01 \cdot (GPA \cdot IQ)
 _Equation for females given fixed IQ and GPA:_
 
 \[
-\begin{align}
+\begin{aligned}
 Salary & =  50 + 20 \cdot GPA + 0.07 \cdot IQ + 35 + 0.01 \cdot (GPA \cdot IQ)  -10 \cdot GPA\\
 & =  85 + 20 \cdot GPA + 0.07 \cdot IQ + 0.01 \cdot (GPA \cdot IQ)  -10 \cdot GPA
-\end{align}
+\end{aligned}
 \]
 
 
